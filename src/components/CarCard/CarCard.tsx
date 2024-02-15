@@ -35,10 +35,10 @@ const CarCard = ({ car }: Props) => {
             </p>
           </div>
           <div className="d-flex flex-row justify-content-between ">
-            <Link to={`/checkout/${car.id}`} className="btn btn-primary mx-2 " onClick={()=>{ dispatch(loadCar(car.id))}}>
+            <Link to={`/vite-deploy/checkout/${car.id}`} className="btn btn-primary mx-2 " onClick={()=>{ dispatch(loadCar(car.id))}}>
               {t("rent")}
             </Link>
-            <Link to={`/car-detail/${car.id}`} className="btn btn-warning ">
+            <Link to={`/vite-deploy/car-detail/${car.id}`} className="btn btn-warning ">
               {t("info")}
             </Link>
           </div>
