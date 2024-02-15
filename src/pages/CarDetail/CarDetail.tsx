@@ -98,7 +98,7 @@ const CarDetail = () => {
             </div>
             <div className="d-flex flex-row justify-content-center mt-3 ">
               <Link
-                to={`/checkout/${car?.id}`}
+                to={`/vite-deploy/checkout/${car?.id}`}
                 className="btn btn-primary mx-2 w-100"
               >
                 {t("rent")}

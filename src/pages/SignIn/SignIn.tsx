@@ -54,7 +54,7 @@ const SignIn = () => {
   
 
       if(rentalState.carId>0){navigate(`/checkout/${rentalState.carId}`)}
-      else{navigate("/");}
+      else{navigate("/vite-deploy/");}
       
     } catch (error: any) {
       if (error.response.data.validationErrors) {

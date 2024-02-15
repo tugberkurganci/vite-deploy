@@ -88,7 +88,7 @@ const Profile = () => {
 
         dispatch(logoutSuccess());
 
-        navigate("/");
+        navigate("/vite-deploy/");
       } catch (error: any) {
         toast.error(error?.response.data.message);
       }

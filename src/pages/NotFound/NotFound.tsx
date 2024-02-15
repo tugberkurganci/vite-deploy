@@ -12,7 +12,7 @@ const NotFound = () => {
       <div className="  fs-3 bg-secondary-subtle py-5 px-2  rounded-md-pill rounded">
         {t("notfoundmessage")}
       </div>
-      <Link to={"/"}>
+      <Link to={"/vite-deploy/"}>
         <div className="btn btn-primary py-3 px-4 fs-4 rounded-pill fw-semibold">
           {t("gotohome")}
         </div>

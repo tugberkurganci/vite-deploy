@@ -48,7 +48,7 @@ const OrderComplete = () => {
           </div>
         </div>
         <div className="btn btn-success mt-3 ">
-          <Link to={"/"} className="text-light text-decoration-none">
+          <Link to={"/vite-deploy/"} className="text-light text-decoration-none">
            <div>{t("look")}</div> 
           </Link>
         </div>

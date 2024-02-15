@@ -25,7 +25,7 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(logoutSuccess());
     dispatch(deleteRental());
-    navigate("/");
+    navigate("/vite-deploy/");
     setMenuIsOpened(false);
   };
   const handleNavClick = (key: string) => {
@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className=" d-flex  align-items-center gap-2  ms-2">
           <Link
             className="navbar-brand"
-            to="/"
+            to="/vite-deploy/"
             onClick={() => handleNavClick("home")}
           >
             <img id="minivan" src={minivanIcon} alt="mini van icon" />
@@ -68,7 +68,7 @@ const Navbar = () => {
                   activeKey === "home" &&
                   "active bg-primary rounded-1 text-light"
                 }`}
-                to="/"
+                to="/vite-deploy/"
                 onClick={() => handleNavClick("home")}
               >
                 {t("home")}
@@ -82,7 +82,7 @@ const Navbar = () => {
                     activeKey === "admin" &&
                     "active bg-primary rounded-1 text-light"
                   }`}
-                  to="/dashboard"
+                  to="/vite-deploy/dashboard"
                   onClick={() => handleNavClick("admin")}
                 >
                   {t("admin")}
@@ -116,7 +116,7 @@ const Navbar = () => {
                 onClick={() => setMenuIsOpened(false)}
               >
                 <Link
-                  to={"/login"}
+                  to={"/vite-deploy/login"}
                   className="text-light d-flex text-decoration-none align-items-center gap-1 "
                 >
                   <CiLogin size={25} />
@@ -126,7 +126,7 @@ const Navbar = () => {
 
               <div onClick={() => setMenuIsOpened(false)}>
                 <Link
-                  to={"/sign-up"}
+                  to={"/vite-deploy/sign-up"}
                   className="text-light d-flex text-decoration-none align-items-center gap-1 py-2"
                 >
                   <CgProfile size={25} />
@@ -141,7 +141,7 @@ const Navbar = () => {
                 onClick={() => setMenuIsOpened(false)}
               >
                 <Link
-                  to={"/profile"}
+                  to={"/vite-deploy/profile"}
                   className="text-light d-flex text-decoration-none  align-items-center gap-1"
                 >
                   <CgProfile size={25} />
@@ -151,7 +151,7 @@ const Navbar = () => {
 
               <div onClick={handleLogout}>
                 <Link
-                  to={"/"}
+                  to={"/vite-deploy/"}
                   className="text-light d-flex text-decoration-none py-2 align-items-center gap-1"
                 >
                   <IoIosLogOut size={25} />
@@ -171,7 +171,7 @@ const Navbar = () => {
         >
           <Link
             className="navbar-brand"
-            to="/"
+            to="/vite-deploy/"
             onClick={() => handleNavClick("home")}
           >
             <img id="minivan" src={minivanIcon} alt="mini van icon" />
@@ -183,7 +183,7 @@ const Navbar = () => {
                   activeKey === "home" &&
                   "active bg-primary rounded-1 text-light"
                 }`}
-                to="/"
+                to="/vite-deploy/"
                 onClick={() => handleNavClick("home")}
               >
                 {t("home")}
@@ -197,7 +197,7 @@ const Navbar = () => {
                     activeKey === "admin" &&
                     "active bg-primary rounded-1 text-light"
                   }`}
-                  to="/dashboard"
+                  to="/vite-deploy/dashboard"
                   onClick={() => handleNavClick("admin")}
                 >
                   {t("admin")}
@@ -211,7 +211,7 @@ const Navbar = () => {
               <div className="d-flex align-items-center justify-content-end ">
                 <div className="btn btn-primary ">
                   <Link
-                    to={"/login"}
+                    to={"/vite-deploy/login"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <CiLogin size={25} />
@@ -221,7 +221,7 @@ const Navbar = () => {
 
                 <div className="btn btn-primary ms-3 ">
                   <Link
-                    to={"/sign-up"}
+                    to={"/vite-deploy/sign-up"}
                     className="text-light  d-flex  align-items-center gap-1"
                   >
                     <CgProfile size={25} />
@@ -233,7 +233,7 @@ const Navbar = () => {
               <div className="d-flex align-items-center justify-content-end ">
                 <div className="btn btn-primary  ">
                   <Link
-                    to={"/profile"}
+                    to={"/vite-deploy/profile"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <CgProfile size={25} />
@@ -243,7 +243,7 @@ const Navbar = () => {
 
                 <div onClick={handleLogout} className="btn btn-primary ms-3 ">
                   <Link
-                    to={"/"}
+                    to={"/vite-deploy/"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <IoIosLogOut size={25} />

@@ -53,7 +53,7 @@ const SignUp = () => {
        await axiosInstance.post("/v1/users", values);
 
    
-      navigate("/login");
+      navigate("/vite-deploy/login");
       toast.success("Kullanıcı başarıyla oluşturuldu");
     } catch (error: any) {
       if (error.response.data.validationErrors) {
