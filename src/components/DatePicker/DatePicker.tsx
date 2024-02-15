@@ -43,7 +43,7 @@ const DatePicker = () => {
       console.log(values);
       dispatch(loadRental(values));
       //İf no response throw tastify error
-      navigate(`/cars`, {
+      navigate(`/vite-deploy/cars`, {
         state: { cars: response.data },
       });
       setInitialValues({

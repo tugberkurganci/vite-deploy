@@ -50,14 +50,14 @@ const Checkout = () => {
       });
       //İf no response throw tastify error
       dispatch(deleteRental());
-      navigate(`/order-complete`, {
+      navigate(`/vite-deploy/order-complete`, {
         state: { rental: response.data },
       });
     } catch (error: any) {
       toast.error(error?.response.data.message);
       console.log(error);
       if (authState.id === 0) {
-        navigate("/login");
+        navigate("/vite-deploy/login");
       }
     } finally {
       setIsLoading(false);
