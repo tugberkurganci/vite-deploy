@@ -16,7 +16,7 @@ import { deleteRental } from "../../store/rentalStore/rentalSlice";
 const Navbar = () => {
   const [activeKey, setActiveKey] = useState<string>("home");
   const [menuIsOpened, setMenuIsOpened] = useState<boolean>(false);
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(logoutSuccess());
     dispatch(deleteRental());
-    navigate("/vite-deploy/");
+    navigate("/");
     setMenuIsOpened(false);
   };
   const handleNavClick = (key: string) => {
@@ -34,10 +34,11 @@ const Navbar = () => {
   const handleHamburgerClick = () => {
     setMenuIsOpened(!menuIsOpened);
   };
-  const handleOutsideClick = () => {
+  const handleOutsideClick = (event: any) => {
     if (
       menuIsOpened &&
-      menuRef.current //!menuRef.current.contains(event.target)
+      menuRef.current &&
+      !menuRef.current.contains(event.target)
     ) {
       setMenuIsOpened(false);
     }
@@ -56,7 +57,7 @@ const Navbar = () => {
         <div className=" d-flex  align-items-center gap-2  ms-2">
           <Link
             className="navbar-brand"
-            to="/vite-deploy/"
+            to="/"
             onClick={() => handleNavClick("home")}
           >
             <img id="minivan" src={minivanIcon} alt="mini van icon" />
@@ -68,7 +69,7 @@ const Navbar = () => {
                   activeKey === "home" &&
                   "active bg-primary rounded-1 text-light"
                 }`}
-                to="/vite-deploy/"
+                to="/"
                 onClick={() => handleNavClick("home")}
               >
                 {t("home")}
@@ -82,7 +83,7 @@ const Navbar = () => {
                     activeKey === "admin" &&
                     "active bg-primary rounded-1 text-light"
                   }`}
-                  to="/vite-deploy/dashboard"
+                  to="/dashboard"
                   onClick={() => handleNavClick("admin")}
                 >
                   {t("admin")}
@@ -116,7 +117,7 @@ const Navbar = () => {
                 onClick={() => setMenuIsOpened(false)}
               >
                 <Link
-                  to={"/vite-deploy/login"}
+                  to={"/login"}
                   className="text-light d-flex text-decoration-none align-items-center gap-1 "
                 >
                   <CiLogin size={25} />
@@ -126,7 +127,7 @@ const Navbar = () => {
 
               <div onClick={() => setMenuIsOpened(false)}>
                 <Link
-                  to={"/vite-deploy/sign-up"}
+                  to={"/sign-up"}
                   className="text-light d-flex text-decoration-none align-items-center gap-1 py-2"
                 >
                   <CgProfile size={25} />
@@ -141,7 +142,7 @@ const Navbar = () => {
                 onClick={() => setMenuIsOpened(false)}
               >
                 <Link
-                  to={"/vite-deploy/profile"}
+                  to={"/profile"}
                   className="text-light d-flex text-decoration-none  align-items-center gap-1"
                 >
                   <CgProfile size={25} />
@@ -151,7 +152,7 @@ const Navbar = () => {
 
               <div onClick={handleLogout}>
                 <Link
-                  to={"/vite-deploy/"}
+                  to={"/"}
                   className="text-light d-flex text-decoration-none py-2 align-items-center gap-1"
                 >
                   <IoIosLogOut size={25} />
@@ -171,7 +172,7 @@ const Navbar = () => {
         >
           <Link
             className="navbar-brand"
-            to="/vite-deploy/"
+            to="/"
             onClick={() => handleNavClick("home")}
           >
             <img id="minivan" src={minivanIcon} alt="mini van icon" />
@@ -183,7 +184,7 @@ const Navbar = () => {
                   activeKey === "home" &&
                   "active bg-primary rounded-1 text-light"
                 }`}
-                to="/vite-deploy/"
+                to="/"
                 onClick={() => handleNavClick("home")}
               >
                 {t("home")}
@@ -197,7 +198,7 @@ const Navbar = () => {
                     activeKey === "admin" &&
                     "active bg-primary rounded-1 text-light"
                   }`}
-                  to="/vite-deploy/dashboard"
+                  to="/dashboard"
                   onClick={() => handleNavClick("admin")}
                 >
                   {t("admin")}
@@ -211,7 +212,7 @@ const Navbar = () => {
               <div className="d-flex align-items-center justify-content-end ">
                 <div className="btn btn-primary ">
                   <Link
-                    to={"/vite-deploy/login"}
+                    to={"/login"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <CiLogin size={25} />
@@ -221,7 +222,7 @@ const Navbar = () => {
 
                 <div className="btn btn-primary ms-3 ">
                   <Link
-                    to={"/vite-deploy/sign-up"}
+                    to={"/sign-up"}
                     className="text-light  d-flex  align-items-center gap-1"
                   >
                     <CgProfile size={25} />
@@ -233,7 +234,7 @@ const Navbar = () => {
               <div className="d-flex align-items-center justify-content-end ">
                 <div className="btn btn-primary  ">
                   <Link
-                    to={"/vite-deploy/profile"}
+                    to={"/profile"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <CgProfile size={25} />
@@ -243,7 +244,7 @@ const Navbar = () => {
 
                 <div onClick={handleLogout} className="btn btn-primary ms-3 ">
                   <Link
-                    to={"/vite-deploy/"}
+                    to={"/"}
                     className="text-light d-flex  align-items-center gap-1"
                   >
                     <IoIosLogOut size={25} />
