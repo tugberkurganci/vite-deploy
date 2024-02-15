@@ -13,9 +13,9 @@ import { logoutSuccess } from "../../store/authStore/authSlice";
 import UserUpdate from "../../components/Dashboard/UserPanel/UserUpdate";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 
-type Props = {};
 
-const Profile = (props: Props) => {
+
+const Profile = () => {
   const authState = useSelector((store: any) => store.auth);
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -83,7 +83,7 @@ const Profile = (props: Props) => {
 
     if (confirmation) {
       try {
-        const response = await axiosInstance.delete(`/v1/users/${user?.id}`);
+        await axiosInstance.delete(`/v1/users/${user?.id}`);
         toast.success("deleted successfully");
 
         dispatch(logoutSuccess());

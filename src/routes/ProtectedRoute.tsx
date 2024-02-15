@@ -1,8 +1,7 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute({ children }:any) {
   const authState = useSelector((store: any) => store.auth);
   if (authState.id === 0) {
     return <Navigate to={"/"} />;

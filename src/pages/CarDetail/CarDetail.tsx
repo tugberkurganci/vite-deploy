@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CarModel } from "../../models/CarModel";
 import { Link, useParams } from "react-router-dom";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
@@ -8,9 +8,9 @@ import "../../components/Dashboard/CarPanel/carPanel.css";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 import "./carDetail.css";
 
-type Props = {};
 
-const CarDetail = (props: Props) => {
+
+const CarDetail = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { id } = useParams();
   const { t } = useTranslation();

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosInstance from "../../utils/interceptors/axiosInterceptors";
-import Input from "../Input/Input";
-import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import "./searchKey.css";
 import { IoClose } from "react-icons/io5";
@@ -27,8 +25,7 @@ const SearchKey = ({
   const [searchKey, setSearchKey] = useState<string>("");
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const { t } = useTranslation();
+
 
   function handleChange(e: any) {
     setSearchKey(e.target.value);
@@ -40,7 +37,7 @@ const SearchKey = ({
   }
   const fetchData = async () => {
     setLoading(true);
-    setError(null);
+  
     //setPageable({ ...pageable,page:0})
     if (searchKey) {
       try {
@@ -61,7 +58,7 @@ const SearchKey = ({
       } catch (error: any) {
         console.error("Oluşturma Hatası:", error);
 
-        setError(error.message);
+        
         toast.error(error.response.data.message);
       } finally {
         setLoading(false);

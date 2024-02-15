@@ -6,7 +6,6 @@ import * as Yup from "yup";
 import FormikInput from "../../FormikInput/FormikInput";
 import { Form, Formik, FormikHelpers } from "formik";
 import "./userPanel.css";
-import Pagination from "../../Pagination/Pagination";
 import { useTranslation } from "react-i18next";
 
 type Props = { editable: any; user?: UserModel };

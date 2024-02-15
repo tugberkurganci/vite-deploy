@@ -1,10 +1,9 @@
-import React from "react";
 import "./notFound.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-type Props = {};
 
-const NotFound = (props: Props) => {
+
+const NotFound = () => {
   const { t } = useTranslation();
   return (
     <div className="bg- bg-opacity-25 col-12 col-md-8 d-flex text-center flex-column justify-content-start align-items-center gap-5">

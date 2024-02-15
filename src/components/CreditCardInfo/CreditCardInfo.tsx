@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCcMastercard } from "react-icons/fa";
 import { FcSimCardChip } from "react-icons/fc";
 import { MdContactless } from "react-icons/md";
 import "./creditCardInfo.css";
 import { SiMastercard } from "react-icons/si";
 
-type Props = {};
 
-const CreditCardInfo = (props: Props) => {
+
+const CreditCardInfo = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isFrontAnimEnd, setIsFrontAnimEnd] = useState(false);
-  const [isBackAnimEnd, setIsBackAnimEnd] = useState(false);
+ 
 
   const [cardInfos, setCardInfos] = useState<any>({
     name: "",
@@ -60,7 +60,7 @@ const CreditCardInfo = (props: Props) => {
   const handleCvvBlur = () => {
     setIsFlipped(false);
     setIsFrontAnimEnd(false);
-    setIsBackAnimEnd(false);
+   
   };
   useEffect(() => {
     console.log(isFlipped);
@@ -129,7 +129,7 @@ const CreditCardInfo = (props: Props) => {
               isFrontAnimEnd && "back"
             } ${isFrontAnimEnd ? "d-flex" : "d-none"} `}
             onAnimationEnd={() => {
-              setIsBackAnimEnd(true);
+          
             }}
           >
             asd
@@ -275,7 +275,7 @@ const CreditCardInfo = (props: Props) => {
               isFrontAnimEnd && "back"
             } ${isFrontAnimEnd ? "d-flex" : "d-none"} `}
             onAnimationEnd={() => {
-              setIsBackAnimEnd(true);
+              
             }}
           >
             <div className="w-100 h-25 bg-secondary-subtle"></div>

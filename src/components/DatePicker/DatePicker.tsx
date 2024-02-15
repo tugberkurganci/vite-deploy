@@ -1,12 +1,11 @@
 import { Form, Formik, FormikHelpers } from "formik";
-import React, { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FormikInput from "../FormikInput/FormikInput";
 import axiosInstance from "../../utils/interceptors/axiosInterceptors";
 import * as Yup from "yup";
 import { CarSearchValues } from "../../models/CarSearchModel";
 import { useDispatch } from "react-redux";
-import { loadAuthState } from "../../store/storage";
 import { loadRental } from "../../store/rentalStore/rentalSlice";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
@@ -14,9 +13,9 @@ import { LocationModel } from "../../models/LocationModel";
 import FormikSelect from "../FormikSelect/FormikSelect";
 
 
-type Props = {};
 
-const DatePicker = (props: Props) => {
+
+const DatePicker = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();

@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../../utils/interceptors/axiosInterceptors";
 import { toast } from "react-toastify";
-import * as Yup from "yup";
 import Pagination from "../../Pagination/Pagination";
 import { ModelType } from "../../../models/ModelType";
 import { useTranslation } from "react-i18next";
 import ModelAddUpdate from "./ModelAddUpdate";
 import "./modelPanel.css";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
-type Props = {};
 
-const ModelPanel = (props: Props) => {
+
+const ModelPanel = () => {
   const [modelList, setModelList] = useState<ModelType[]>([]);
   const [pageable, setPageable] = useState<any>({ page: 0, size: 10 });
   const [editable, setEditable] = useState<boolean>(false);
@@ -37,7 +36,7 @@ const ModelPanel = (props: Props) => {
     const confirmation = confirm("Are you sure you want to delete?");
     if (confirmation) {
       try {
-        const response = await axiosInstance.delete(`/v1/models/${model.id}`);
+         await axiosInstance.delete(`/v1/models/${model.id}`);
         toast.success("Model deleted successfully");
         fetchModels();
       } catch (error: any) {

@@ -1,8 +1,6 @@
-import React from "react";
 import "./carPlaceholder.css";
-type Props = {};
 
-const CarPlaceholder = (props: Props) => {
+const CarPlaceholder = () => {
   return (
     <div className="d-flex justify-content-center w-100 align-items-center mb-3">
       <div className="card col-12 d-flex flex-column flex-md-row justify-content-between">

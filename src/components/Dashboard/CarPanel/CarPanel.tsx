@@ -8,13 +8,12 @@ import CarAddUpdate from "./CarAddUpdate";
 import SearchKey from "../../SearchKey/SearchKey";
 import "./carPanel.css";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
-type Props = {};
 
-const CarPanel = (props: Props) => {
+
+const CarPanel = () => {
   const { t } = useTranslation();
   const [carList, setCarList] = useState<CarModel[]>([]);
-  const [carId, setCarId] = useState<number>(0);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  
   const [pageable, setPageable] = useState<any>({ page: 0, size: 3 });
   const [editable, setEditable] = useState<boolean>(false);
   const [addable, setAddable] = useState<boolean>(false);
@@ -43,7 +42,7 @@ const CarPanel = (props: Props) => {
     const confirmation = confirm("Are you sure you want to delete?");
     if (confirmation) {
       try {
-        const response = await axiosInstance.delete(`/v1/cars/${car.id}`);
+         await axiosInstance.delete(`/v1/cars/${car.id}`);
         toast.success("Car deleted successfully");
         fetchCars();
       } catch (error: any) {

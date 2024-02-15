@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-type Props = {};
 
-const OrderComplete = (props: Props) => {
+
+const OrderComplete = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const { rental } = location.state || {};

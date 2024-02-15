@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CarModel } from "../../models/CarModel";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,9 +12,9 @@ import { FaEquals } from "react-icons/fa";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 import CreditCardInfo from "../../components/CreditCardInfo/CreditCardInfo";
 
-type Props = {};
 
-const Checkout = (props: Props) => {
+
+const Checkout = () => {
   const authState = useSelector((store: any) => store.auth);
   const rentalState = useSelector((store: any) => store.rental);
   const { t } = useTranslation();

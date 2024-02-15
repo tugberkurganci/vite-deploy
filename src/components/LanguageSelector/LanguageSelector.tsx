@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {};
 
-const LanguageSelector = (props: Props) => {
+const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const [selectedOption, setSelectedOption] = useState(
     localStorage.getItem("lang") || "en"

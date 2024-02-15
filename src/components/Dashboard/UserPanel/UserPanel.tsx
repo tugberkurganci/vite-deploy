@@ -5,15 +5,12 @@ import { toast } from "react-toastify";
 import "./userPanel.css";
 import Pagination from "../../Pagination/Pagination";
 import { useTranslation } from "react-i18next";
-import Image from "../../CarImage/CarImage";
 import UserUpdate from "./UserUpdate";
 import SearchKey from "../../SearchKey/SearchKey";
 import "./userPanel.css";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 
-type Props = {};
-
-const UserPanel = (props: Props) => {
+const UserPanel = () => {
   const { t } = useTranslation();
   const [userList, setUserList] = useState<UserModel[]>([]);
   const [pageable, setPageable] = useState<any>({ page: 0, size: 10 });
@@ -47,7 +44,7 @@ const UserPanel = (props: Props) => {
     const confirmation = confirm("Are you sure you want to delete?");
     if (confirmation) {
       try {
-        const response = await axiosInstance.delete(`/v1/users/${user.id}`);
+         await axiosInstance.delete(`/v1/users/${user.id}`);
         toast.success("User deleted successfully");
         fetchUsers();
       } catch (error: any) {

@@ -24,14 +24,14 @@ type CarFilterKeys = {
   carList?: CarModel[];
 };
 
-type Props = {};
 
-const CarsPage = (props: Props) => {
+
+const CarsPage = () => {
   const { t } = useTranslation();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading] = useState<boolean>(false);
   const location = useLocation();
   const { cars } = location.state || [];
-  const [carList, setCarList] = useState<CarModel[]>(cars);
+  const [carList] = useState<CarModel[]>(cars);
   const [filteredCarList, setFilteredCarList] = useState<CarModel[]>(carList);
   const [sortedCarList, setSortedCarList] =
     useState<CarModel[]>(filteredCarList);

@@ -1,12 +1,9 @@
-import React from "react";
 import { useEffect, useState } from "react";
-import { RentalModel } from "../../../models/RentalModel";
 import axiosInstance from "../../../utils/interceptors/axiosInterceptors";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import FormikInput from "../../FormikInput/FormikInput";
 import { Form, Formik, FormikHelpers } from "formik";
-import Pagination from "../../Pagination/Pagination";
 import { ModelType } from "../../../models/ModelType";
 import FormikSelect from "../../FormikSelect/FormikSelect";
 import { useTranslation } from "react-i18next";

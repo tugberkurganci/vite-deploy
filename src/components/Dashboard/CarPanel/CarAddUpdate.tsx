@@ -1,7 +1,6 @@
 import * as Yup from "yup";
 import FormikInput from "../../FormikInput/FormikInput";
 import { Form, Formik, FormikHelpers } from "formik";
-import Pagination from "../../Pagination/Pagination";
 import FormikSelect from "../../FormikSelect/FormikSelect";
 import { ModelType } from "../../../models/ModelType";
 import { ColorModel } from "../../../models/ColorModel";
@@ -20,7 +19,7 @@ const CarAddUpdate = ({ car, setEditable, urlType }: Props) => {
   const [colorList, setColorList] = useState<ColorModel[]>([]);
   const [image, setImage] = useState<any>();
   const [locations, setLocations] = useState<LocationModel[]>([]);
-  const [status, setStatus] = useState([
+  const [status] = useState([
     { status: "MAINTENANCE" },
     { status: "AVAILABLE" },
   ]);

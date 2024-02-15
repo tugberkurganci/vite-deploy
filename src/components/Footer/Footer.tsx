@@ -1,9 +1,8 @@
-import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
-type Props = {};
 
-const Footer = (props: Props) => {
+
+const Footer = () => {
   return (
     <div className="sticky-bottom bg-dark text-light text-center">
       <footer className="py-5">

@@ -9,9 +9,9 @@ import Pagination from "../../Pagination/Pagination";
 import { useTranslation } from "react-i18next";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 
-type Props = {};
 
-const RentalPanel = (props: Props) => {
+
+const RentalPanel = () => {
   const [rentalList, setRentalList] = useState<RentalModel[]>([]);
   const { t } = useTranslation();
   const [pageable, setPageable] = useState<any>({ page: 0, size: 10 });
@@ -78,7 +78,7 @@ const RentalPanel = (props: Props) => {
     const confirmation = confirm("Are you sure you want to delete?");
     if (confirmation) {
       try {
-        const response = await axiosInstance.delete(`/v1/rentals/${car.id}`);
+         await axiosInstance.delete(`/v1/rentals/${car.id}`);
         toast.success("Rental deleted successfully");
         fetchRentals();
       } catch (error: any) {

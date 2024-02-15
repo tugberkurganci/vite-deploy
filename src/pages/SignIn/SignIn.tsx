@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import FormikInput from "../../components/FormikInput/FormikInput";
@@ -16,9 +15,8 @@ type SignInFormValues = {
   password: string;
 };
 
-type Props = {};
 
-const SignIn = (props: Props) => {
+const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -37,7 +35,7 @@ const SignIn = (props: Props) => {
     password: Yup.string().required(`${t("veri")}`),
   });
 
-  const [responseAlert, setResponseAlert] = useState<string | null>(null);
+
 
   const handleSignInSubmit = async (
     values: SignInFormValues,
@@ -45,7 +43,7 @@ const SignIn = (props: Props) => {
   ) => {
     try {
       setSubmitting(true);
-      setResponseAlert(null);
+     
 
       const response = await axiosInstance.post("/auth", values);
 
@@ -53,8 +51,7 @@ const SignIn = (props: Props) => {
 
       setToken(response.data.token.refreshToken);
 
-      // Handle the response or redirect to another page if needed
-      setResponseAlert("success"); // Set the alert type to success
+  
 
       if(rentalState.carId>0){navigate(`/checkout/${rentalState.carId}`)}
       else{navigate("/");}
@@ -71,7 +68,7 @@ const SignIn = (props: Props) => {
       } else {
         // console.error("Signup failed:", error);
         toast.error(error.response.data.message);
-        setResponseAlert("danger");
+     
       }
     } finally {
       setSubmitting(false);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccess } from "../../store/authStore/authSlice";
@@ -11,9 +11,9 @@ import { useTranslation } from "react-i18next";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { MdOutlineMenu } from "react-icons/md";
 import { deleteRental } from "../../store/rentalStore/rentalSlice";
-type Props = {};
 
-const Navbar = (props: Props) => {
+
+const Navbar = () => {
   const [activeKey, setActiveKey] = useState<string>("home");
   const [menuIsOpened, setMenuIsOpened] = useState<boolean>(false);
   const menuRef = useRef(null);
@@ -34,11 +34,10 @@ const Navbar = (props: Props) => {
   const handleHamburgerClick = () => {
     setMenuIsOpened(!menuIsOpened);
   };
-  const handleOutsideClick = (event: any) => {
+  const handleOutsideClick = () => {
     if (
       menuIsOpened &&
-      menuRef.current &&
-      !menuRef.current.contains(event.target)
+      menuRef.current //!menuRef.current.contains(event.target)
     ) {
       setMenuIsOpened(false);
     }

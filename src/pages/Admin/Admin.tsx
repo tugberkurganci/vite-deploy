@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import UserPanel from "../../components/Dashboard/UserPanel/UserPanel";
 import CarPanel from "../../components/Dashboard/CarPanel/CarPanel";
 import RentalPanel from "../../components/Dashboard/RentalPanel/RentalPanel";
 import ModelPanel from "../../components/Dashboard/ModelPanel/ModelPanel";
 import { useTranslation } from "react-i18next";
 
-type Props = {};
 
-const Admin = (props: Props) => {
+
+const Admin = () => {
   const [section, setSection] = useState<string>("user");
   const { t } = useTranslation();
 

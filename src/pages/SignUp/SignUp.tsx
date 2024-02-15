@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import axiosInstance from "../../utils/interceptors/axiosInterceptors";
 import FormikInput from "../../components/FormikInput/FormikInput";
-import Alert from "../../components/Alert/Alert";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
@@ -17,10 +15,9 @@ type SignupFormValues = {
   confirmPassword: string;
 };
 
-type Props = {};
 
-const SignUp = (props: Props) => {
-  const [responseAlert, setResponseAlert] = useState<string | null>(null);
+
+const SignUp = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const initialValues: SignupFormValues = {
@@ -51,12 +48,11 @@ const SignUp = (props: Props) => {
   ) => {
     try {
       setSubmitting(true);
-      setResponseAlert(null);
 
-      const response = await axiosInstance.post("/v1/users", values);
 
-      // Handle the response or redirect to another page if needed
-      setResponseAlert("success"); // Set the alert type to success
+       await axiosInstance.post("/v1/users", values);
+
+   
       navigate("/login");
       toast.success("Kullanıcı başarıyla oluşturuldu");
     } catch (error: any) {
@@ -70,7 +66,7 @@ const SignUp = (props: Props) => {
         setErrors(formikErrors);
       } else {
         // console.error("Signup failed:", error);
-        setResponseAlert("danger");
+ 
         console.log(error);
         toast.error(error.response.data.message);
       }

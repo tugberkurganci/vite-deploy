@@ -1,6 +1,5 @@
 import {  createSlice } from "@reduxjs/toolkit";
-import { loadAuthState, loadRentalState } from "../storage";
-import { setToken } from "../../utils/interceptors/axiosInterceptors";
+import { loadRentalState } from "../storage";
 
 
 

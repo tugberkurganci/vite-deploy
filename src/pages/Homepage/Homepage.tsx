@@ -1,12 +1,10 @@
-// import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./homepage.css";
 import video from "/src/assets/ArabaTanıtım.mp4";
 import DatePicker from "../../components/DatePicker/DatePicker";
 import { useTranslation } from "react-i18next";
-type Props = {};
 
-const Homepage = (props: Props) => {
+
+const Homepage = () => {
   // const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const {t}=useTranslation();
   return (
