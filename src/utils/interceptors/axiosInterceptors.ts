@@ -14,10 +14,10 @@ export const injectStore = (_store: any) => {
 };
 
 export const axiosAssets = axios.create({
-  baseURL: `/assets`,
+  baseURL: `https://spring-render-ucd3.onrender.com/assets`,
 });
 const axiosInstance = axios.create({
-  baseURL: `/api`,
+  baseURL: `https://spring-render-ucd3.onrender.com/api`,
 });
 
 
