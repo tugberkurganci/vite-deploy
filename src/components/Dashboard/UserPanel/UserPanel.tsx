@@ -80,8 +80,8 @@ const UserPanel = () => {
                   <div className="card w-100 mb-3" key={user.id}>
                     {user.image && (
                       <img
-                        src={`/assets/${"user"}/${user.image}`}
-                        className={`card-img-top`}
+                      src={`https://spring-render-ucd3.onrender.com/assets/${"user"}/${user.image}`}
+                      className={`card-img-top`}
                         alt={`${user.email}'s profile picture `}
                       />
                     )}
@@ -144,7 +144,7 @@ const UserPanel = () => {
                   <div className="card w-100 mb-3" key={user.id}>
                     {user.image && (
                       <img
-                        src={`/assets/${"user"}/${user.image}`}
+                      src={`https://spring-render-ucd3.onrender.com/assets/${"user"}/${user.image}`}
                         className={`card-img-top `}
                         alt={`${user.email}'s profile picture `}
                       />
@@ -242,7 +242,7 @@ const UserPanel = () => {
                         {user.image && (
                           <img
                             id="user-img"
-                            src={`/assets/${"user"}/${user.image}`}
+                            src={`https://spring-render-ucd3.onrender.com/assets/${"user"}/${user.image}`}
                             className={`card-img-top `}
                             alt={`${user.email}'s profile picture `}
                           />
@@ -275,7 +275,7 @@ const UserPanel = () => {
                         {user.image && (
                           <img
                             id="user-img"
-                            src={`/assets/${"user"}/${user.image}`}
+                            src={`https://spring-render-ucd3.onrender.com/assets/${"user"}/${user.image}`}
                             className={`card-img-top`}
                             alt={`${user.email}'s profile picture `}
                           />

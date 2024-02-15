@@ -4,7 +4,7 @@ const Image = ({ source, model }: Props) => {
   return (
     <img
       className="img-fluid rounded"
-      src={source ? `/assets/${model}/${source}` : ""}
+      src={source ? `https://spring-render-ucd3.onrender.com/assets/${model}/${source}` : ""}
     ></img>
   );
 };

@@ -87,7 +87,7 @@ const CarPanel = () => {
                   <div className="card w-100 mb-3" key={car.id}>
                     {car.image && (
                       <img
-                        src={`/assets/${"car"}/${car.image}`}
+                        src={`https://spring-render-ucd3.onrender.com/assets/${"car"}/${car.image}`}
                         className="card-img-top"
                         alt={`${car.modelName} picture `}
                       />
@@ -330,8 +330,7 @@ const CarPanel = () => {
                       <td className="center-text " width={150}>
                         <img
                           className={`car-img`}
-                          src={`/assets/${"car"}/${car.image}`}
-                        />
+                          src={`https://spring-render-ucd3.onrender.com/assets/${"car"}/${car.image}`}                        />
                       </td>
                       <td className="center-text">{car.modelName}</td>
                       <td className="center-text">{car.kilometer}</td>
@@ -366,8 +365,7 @@ const CarPanel = () => {
                       <td className="center-text " width={150}>
                         <img
                           className={`car-img `}
-                          src={`/assets/${"car"}/${car.image}`}
-                        />
+                          src={`https://spring-render-ucd3.onrender.com/assets/${"car"}/${car.image}`}                        />
                       </td>
                       <td className="center-text">{car.modelName}</td>
                       <td className="center-text">{car.kilometer}</td>

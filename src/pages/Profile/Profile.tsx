@@ -281,8 +281,8 @@ const Profile = () => {
                 <div className="profile-img">
                   <img
                     className=" rounded-top"
-                    src={user?.image ? `/assets/${"user"}/${user?.image}` : ""}
-                  />
+                    src={`https://spring-render-ucd3.onrender.com/assets/${"user"}/${user?.image}`}
+                    />
                 </div>
                 <div className="card-body d-flex  flex-column gap-3">
                   <div className="text-capitalize justify-content-center d-flex flex-row align-items-center gap-2 border-bottom border-2 rounded p-1">

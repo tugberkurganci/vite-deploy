@@ -21,15 +21,15 @@ function App() {
       <Navbar />
       <div className="  app d-flex justify-content-center mt-2 mb-5  px-3 ">
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/cars" element={<CarsPage />} />
-          <Route path="/checkout/:id" element={<Checkout />} />
-          <Route path="/order-complete" element={<OrderComplete />} />
-          <Route path="/car-detail/:id" element={<CarDetail />} />
-          <Route path="/login" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/vite-deploy/" element={<Homepage />} />
+          <Route path="/vite-deploy/cars" element={<CarsPage />} />
+          <Route path="/vite-deploy/checkout/:id" element={<Checkout />} />
+          <Route path="/vite-deploy/order-complete" element={<OrderComplete />} />
+          <Route path="/vite-deploy/car-detail/:id" element={<CarDetail />} />
+          <Route path="/vite-deploy/login" element={<SignIn />} />
+          <Route path="/vite-deploy/sign-up" element={<SignUp />} />
           <Route
-            path="/dashboard"
+            path="/vite-deploy/dashboard"
             element={
               <AdminRoute>
                 <Admin />
@@ -38,7 +38,7 @@ function App() {
           />
 
           <Route
-            path="/profile"
+            path="/vite-deploy/profile"
             element={
               <ProtectedRoute>
                 <Profile />

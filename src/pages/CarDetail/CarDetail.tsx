@@ -40,8 +40,8 @@ const CarDetail = () => {
           <div className="col-12 col-md-6 ">
             <img
               className={`img-fluid rounded col-12 border border-secondary-subtle  `}
-              src={`/assets/${"car"}/${car?.image}`}
-            />
+              src={`https://spring-render-ucd3.onrender.com/assets/${"car"}/${car?.image}`}
+              />
           </div>
           <div className="col-12 col-md-6 border rounded border-2 p-2 border-warning fw-semibold">
             <div className="text-center fs-3 bg-warning mb-3 text-capitalize fw-bolder">

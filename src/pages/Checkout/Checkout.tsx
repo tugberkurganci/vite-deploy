@@ -82,8 +82,8 @@ const Checkout = () => {
         {car?.image && (
           <img
             className="img-fluid  border border-2 border-info  "
-            src={`/assets/car/${car.image}`}
-          ></img>
+            src={`https://spring-render-ucd3.onrender.com/assets/${"car"}/${car?.image}`}
+            ></img>
         )}
       </div>
       <div className="col-12 col-md-6 border  rounded bg-body-secondary py-3 mb-5    ">

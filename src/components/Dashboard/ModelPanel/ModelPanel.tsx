@@ -70,7 +70,7 @@ const ModelPanel = () => {
               <div className="card w-100 mb-3" key={model.id}>
                 {model.image && (
                   <img
-                    src={`/assets/model/${model.image}`}
+                  src={`https://spring-render-ucd3.onrender.com/assets/${"model"}/${model.image}`}
                     className={`card-img-top model-img-mobile`}
                     alt={`${model.name} picture `}
                   />
@@ -169,8 +169,8 @@ const ModelPanel = () => {
                   <td className="center-text" width={150}>
                     {model.image && (
                       <img
-                        src={`/assets/${"model"}/${model.image}`}
-                        className={`model-img`}
+                      src={`https://spring-render-ucd3.onrender.com/assets/${"model"}/${model.image}`}
+                      className={`model-img`}
                         alt={`${model.name} picture `}
                       />
                     )}
