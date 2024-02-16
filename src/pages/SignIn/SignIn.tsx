@@ -102,7 +102,7 @@ const SignIn = () => {
                   {isSubmitting ? `${t("loading")}` : `${t("login")}`}
                 </button>
                 <button
-                  type="submit"
+                  type="button"
                   className="btn btn-primary btn-block"
                   disabled={isSubmitting}
                   onClick={()=>{navigate("/sign-up")}}
