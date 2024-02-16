@@ -15,13 +15,11 @@ type SignInFormValues = {
   password: string;
 };
 
-
 const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const rentalState = useSelector((store: any) => store.rental);
-
 
   const initialValues: SignInFormValues = {
     email: "",
@@ -35,15 +33,12 @@ const SignIn = () => {
     password: Yup.string().required(`${t("veri")}`),
   });
 
-
-
   const handleSignInSubmit = async (
     values: SignInFormValues,
     { setErrors, setSubmitting }: FormikHelpers<SignInFormValues>
   ) => {
     try {
       setSubmitting(true);
-     
 
       const response = await axiosInstance.post("/auth", values);
 
@@ -51,11 +46,11 @@ const SignIn = () => {
 
       setToken(response.data.token.refreshToken);
 
-  
-
-      if(rentalState.carId>0){navigate(`/vite-deploy/checkout/${rentalState.carId}`)}
-      else{navigate("/vite-deploy/");}
-      
+      if (rentalState.carId > 0) {
+        navigate(`/vite-deploy/checkout/${rentalState.carId}`);
+      } else {
+        navigate("/vite-deploy/");
+      }
     } catch (error: any) {
       if (error.response.data.validationErrors) {
         const validationErrors: Record<string, string> =
@@ -68,7 +63,6 @@ const SignIn = () => {
       } else {
         // console.error("Signup failed:", error);
         toast.error(error.response.data.message);
-     
       }
     } finally {
       setSubmitting(false);
@@ -94,21 +88,25 @@ const SignIn = () => {
                   type="password"
                 />
 
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? `${t("loading")}` : `${t("login")}`}
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-primary btn-block"
-                  disabled={isSubmitting}
-                  onClick={()=>{navigate("/vite-deploy/sign-up")}}
-                >
-                  {isSubmitting ? `${t("loading")}` : `${t("signUp")}`}
-                </button>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-block"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? `${t("loading")}` : `${t("login")}`}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-block"
+                    disabled={isSubmitting}
+                    onClick={() => {
+                      navigate("/vite-deploy/sign-up");
+                    }}
+                  >
+                    {isSubmitting ? `${t("loading")}` : `${t("signUp")}`}
+                  </button>
+                </div>
               </Form>
             )}
           </Formik>
