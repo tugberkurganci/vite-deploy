@@ -101,6 +101,14 @@ const SignIn = () => {
                 >
                   {isSubmitting ? `${t("loading")}` : `${t("login")}`}
                 </button>
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                  disabled={isSubmitting}
+                  onClick={()=>{navigate("/sign-up")}}
+                >
+                  {isSubmitting ? `${t("loading")}` : `${t("signup")}`}
+                </button>
               </Form>
             )}
           </Formik>
