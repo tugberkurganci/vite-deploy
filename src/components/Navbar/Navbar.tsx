@@ -172,7 +172,7 @@ const Navbar = () => {
         >
           <Link
             className="navbar-brand"
-            to="/"
+            to="/vite-deploy/"
             onClick={() => handleNavClick("home")}
           >
             <img id="minivan" src={minivanIcon} alt="mini van icon" />
