@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import "../../components/Dashboard/CarPanel/carPanel.css";
 import { TbArrowBigRightLineFilled } from "react-icons/tb";
 import "./carDetail.css";
+import { loadCar } from "../../store/rentalStore/rentalSlice";
+import { useDispatch } from "react-redux";
 
 
 
@@ -15,6 +17,7 @@ const CarDetail = () => {
   const { id } = useParams();
   const { t } = useTranslation();
   const [car, setCar] = useState<CarModel>();
+  const dispatch=useDispatch();
   const fetchCar = async () => {
     try {
       const response = await axiosInstance(`/v1/cars/${id}`);
@@ -100,6 +103,7 @@ const CarDetail = () => {
               <Link
                 to={`/vite-deploy/checkout/${car?.id}`}
                 className="btn btn-primary mx-2 w-100"
+                onClick={()=>{dispatch(loadCar(car?.id))}}
               >
                 {t("rent")}
               </Link>
