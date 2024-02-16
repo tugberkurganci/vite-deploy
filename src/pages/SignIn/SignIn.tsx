@@ -105,9 +105,9 @@ const SignIn = () => {
                   type="button"
                   className="btn btn-primary btn-block"
                   disabled={isSubmitting}
-                  onClick={()=>{navigate("/sign-up")}}
+                  onClick={()=>{navigate("/vite-deploy/sign-up")}}
                 >
-                  {isSubmitting ? `${t("loading")}` : `${t("signup")}`}
+                  {isSubmitting ? `${t("loading")}` : `${t("signUp")}`}
                 </button>
               </Form>
             )}
