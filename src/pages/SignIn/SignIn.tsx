@@ -88,7 +88,7 @@ const SignIn = () => {
                   type="password"
                 />
 
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div className="d-flex flex-row justify-content-between">
                   <button
                     type="submit"
                     className="btn btn-primary btn-block"
