@@ -1,70 +1,63 @@
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
-
-
 const Footer = () => {
   return (
     <div className="sticky-bottom bg-dark text-light text-center">
       <footer className="py-5">
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
           <div className="col-11 col-md-2 mb-3 py-4 bg-light bg-opacity-10 rounded">
-            <h5>Section</h5>
+            <h5>Ürünler</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Lorem
+                  Araç Kiralama
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Ipsum
+                  Uzun Dönem Kiralama
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Dolor
+                  Transfer Hizmetleri
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="col-11 col-md-2 mb-3  py-4 bg-light bg-opacity-10 rounded">
-            <h5>Section</h5>
+            <h5>Hakkımızda</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Lorem
+                  Şirket Profili
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Ipsum
+                  Misyonumuz ve Vizyonumuz
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Dolor
+                  Ekibimiz
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="col-11 col-md-2 mb-3  py-4 bg-light bg-opacity-10 rounded">
-            <h5>Section</h5>
+            <h5>İletişim</h5>
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Lorem
+                  İletişim Bilgileri
                 </a>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="nav-link p-0 text-light">
-                  Ipsum
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-light">
-                  Dolor
+                  İletişim Formu
                 </a>
               </li>
             </ul>
@@ -97,7 +90,7 @@ const Footer = () => {
             >
               Minivan icons created by kerismaker - Flaticon
             </a>
-            <p>&copy; 2024 Company, Inc. All rights reserved.</p>
+            <p>&copy; 2024 Şirket, Inc. Tüm hakları saklıdır.</p>
           </div>
         </div>
       </footer>
