@@ -164,9 +164,7 @@ const CarsPage = () => {
     getBrandList();
   }, [carList]);
 
-  useEffect(() => {
-    console.log(initialValues);
-  }, [initialValues]);
+ 
 
   return (
     <div className="container-fluid  d-flex ">
@@ -275,7 +273,7 @@ const CarsPage = () => {
             <div className="d-md-none">
               <div
                 className="text-end btn btn-primary me-2"
-                onFocus={() => setMenuIsOpened(false)}
+                
               >
                 <LuFilter
                   className="text-light"
