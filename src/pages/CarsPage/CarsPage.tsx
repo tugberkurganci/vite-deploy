@@ -272,13 +272,13 @@ const CarsPage = () => {
             {/* Aside-Mobile-Start */}
             <div className="d-md-none">
               <div
-                className="text-end btn btn-primary me-2"
+                className="text-end btn btn-primary me-2"   onClick={handleHamburgerClick}
                 
               >
                 <LuFilter
                   className="text-light"
                   size={20}
-                  onClick={handleHamburgerClick}
+                
                 />
                 <span>Filter</span>
               </div>
