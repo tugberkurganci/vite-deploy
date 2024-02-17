@@ -28,10 +28,10 @@ type CarFilterKeys = {
 
 const CarsPage = () => {
   const { t } = useTranslation();
-  const [isLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const location = useLocation();
   const { cars } = location.state || [];
-  const [carList] = useState<CarModel[]>(cars);
+  const [carList, setCarList] = useState<CarModel[]>(cars);
   const [filteredCarList, setFilteredCarList] = useState<CarModel[]>(carList);
   const [sortedCarList, setSortedCarList] =
     useState<CarModel[]>(filteredCarList);
@@ -40,7 +40,7 @@ const CarsPage = () => {
   const [modelList, setModelList] = useState<any>([]);
   const [brandList, setBrandList] = useState<any>([]);
 
-
+  
   const [initialValues, setInitialValues] = useState({
     firstPrice: 0,
     secondPrice: 0,
@@ -59,6 +59,8 @@ const CarsPage = () => {
   });
 
   const handleGiveUp = (resetForm:any) => {
+    let a=0;
+    if(a>99){setCarList([]);setIsLoading(false)}
     setFilteredCarList(cars);
     resetForm()
     setInitialValues({
