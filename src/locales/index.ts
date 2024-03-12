@@ -23,4 +23,4 @@ i18nInstance.init({
 
     interpolation: {
       escapeValue: false
-    }});
+    }});;
